@@ -1,0 +1,360 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "micro-frontend-application": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/micro-frontend-application",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "micro-frontend-application:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "micro-frontend-application:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "micro-frontend-application:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "micro-frontend-application:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "micro-frontend-application:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "enrollment-form": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/enrollment-form",
+      "sourceRoot": "projects/enrollment-form/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/enrollment-form",
+            "index": "projects/enrollment-form/src/index.html",
+            "main": "projects/enrollment-form/src/main.ts",
+            "polyfills": "projects/enrollment-form/src/polyfills.ts",
+            "tsConfig": "projects/enrollment-form/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/enrollment-form/src/favicon.ico",
+              "projects/enrollment-form/src/assets"
+            ],
+            "styles": [
+              "projects/enrollment-form/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/enrollment-form/src/environments/environment.ts",
+                  "with": "projects/enrollment-form/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "enrollment-form:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "enrollment-form:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "enrollment-form:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/enrollment-form/src/test.ts",
+            "polyfills": "projects/enrollment-form/src/polyfills.ts",
+            "tsConfig": "projects/enrollment-form/tsconfig.spec.json",
+            "karmaConfig": "projects/enrollment-form/karma.conf.js",
+            "assets": [
+              "projects/enrollment-form/src/favicon.ico",
+              "projects/enrollment-form/src/assets"
+            ],
+            "styles": [
+              "projects/enrollment-form/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/enrollment-form/tsconfig.app.json",
+              "projects/enrollment-form/tsconfig.spec.json",
+              "projects/enrollment-form/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/enrollment-form/e2e/protractor.conf.js",
+            "devServerTarget": "enrollment-form:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "enrollment-form:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "display-details": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/display-details",
+      "sourceRoot": "projects/display-details/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/display-details",
+            "index": "projects/display-details/src/index.html",
+            "main": "projects/display-details/src/main.ts",
+            "polyfills": "projects/display-details/src/polyfills.ts",
+            "tsConfig": "projects/display-details/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/display-details/src/favicon.ico",
+              "projects/display-details/src/assets"
+            ],
+            "styles": [
+              "projects/display-details/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/display-details/src/environments/environment.ts",
+                  "with": "projects/display-details/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "display-details:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "display-details:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "display-details:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/display-details/src/test.ts",
+            "polyfills": "projects/display-details/src/polyfills.ts",
+            "tsConfig": "projects/display-details/tsconfig.spec.json",
+            "karmaConfig": "projects/display-details/karma.conf.js",
+            "assets": [
+              "projects/display-details/src/favicon.ico",
+              "projects/display-details/src/assets"
+            ],
+            "styles": [
+              "projects/display-details/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/display-details/tsconfig.app.json",
+              "projects/display-details/tsconfig.spec.json",
+              "projects/display-details/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/display-details/e2e/protractor.conf.js",
+            "devServerTarget": "display-details:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "display-details:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "micro-frontend-application"
+}

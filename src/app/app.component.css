@@ -1,0 +1,7 @@
+.main-app {
+    display:flex;
+}
+
+.main-app div {
+    flex-basis: 100%;
+}

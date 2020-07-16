@@ -1,0 +1,32 @@
+
+.quiz {
+    padding: 5% 10% 0 10%;
+    display:inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz h1 {
+    color:darkolivegreen
+}
+
+.enrollform label {
+    font-weight: bold;
+    font-size: 20px;
+    width : 180px;
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.enrollform input {
+    height:23px;
+    width: 200px
+}
+.enrollform button {
+    padding: 6px 15px 6px 15px;
+    float: right;
+    background-color:rgb(133, 133, 245);
+    color:blanchedalmond;
+}

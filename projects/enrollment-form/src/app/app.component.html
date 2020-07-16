@@ -1,0 +1,26 @@
+<div class="quiz">
+  <h1>Enrollment</h1><br />
+  <div>
+      <form class="enrollform" [formGroup]="enrollform" (ngSubmit)="onSubmit()">
+          <label>Employee ID: </label>
+          <input type="text" required formControlName="eid" value="employeeData.eid"> <br /><br />
+
+          <label>First Name: </label>
+          <input type="text" required minlength=4 formControlName="firstName"> <br /><br />
+
+          <label>Last Name: </label>
+          <input type="text" required minlength=4 formControlName="lastName"><br /><br />
+
+          <label>Email Address: </label>
+          <input type="text" required minlength=10 formControlName="email"><br /><br />
+
+          <label>Address: </label>
+          <input type="text" formControlName="address"><br /><br />
+
+          <label>Phone Number: </label>
+          <input type="text" required maxlength=10 formControlName="phone"><br /><br />
+
+          <button type="submit" [disabled]="!enrollform.valid">Submit</button>
+      </form>
+  </div>
+</div>

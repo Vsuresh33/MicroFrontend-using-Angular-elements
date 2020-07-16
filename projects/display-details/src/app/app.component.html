@@ -1,0 +1,23 @@
+<div>
+  <div class="display">
+    <div *ngIf="employeeData">
+      <h1>Hi {{employeeData['firstName']}} {{employeeData['lastName']}}</h1><br />
+
+      <h4>Your Details:</h4>
+
+      <div class="confirm-details">
+        <span>Employee Id: {{employeeData['eid']}}</span><br /><br />
+        <span>Full Name: {{employeeData['firstName']}} {{employeeData['lastName']}}</span><br /><br />
+        <span>Email Address: {{employeeData['email']}}</span><br /><br />
+        <span>Address: {{employeeData['address']}}</span><br /><br />
+        <span>Phone Number: {{employeeData['phone']}}</span><br /><br />
+      </div>
+    </div>
+
+    <div *ngIf="!employeeData">
+      <h3>Please enter your data and submit for enrollment</h3>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

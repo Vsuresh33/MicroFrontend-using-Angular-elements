@@ -1,0 +1,13 @@
+.display {
+    margin: 7% 5% 0 5%;
+}
+
+.confirm-details span {
+    font-weight: bold;
+    font-size: 15px;
+    width : 400px;
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
